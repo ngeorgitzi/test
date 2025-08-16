@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Σχεδιάζω τον δικό μου ιστότοπο</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: white;
+    }
+
+    .header {
+      border: 1px solid #ccc;
+      background-color:lightblue;
+      padding: 10px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.8em;
+      color: #333;
+    }
+
+    h2 {
+      margin-top: 10px;
+      font-weight: normal;
+      color: #555;
+    }
+
+    .info-icon {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 0.9em;
+      color: #5daee5;
+      padding: 2px 6px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.1s ease, background-color 0.2s ease;
+    }
+
+    .info-icon:active {
+      transform: scale(0.95);
+      background-color: #d8edf8;
+    }
+
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+      transform: scale(0.7);
+      transform-origin: top center;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.4);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 16px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #888;
+      cursor: pointer;
+    }
+
+    .modal-close:hover {
+      color: #333;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #336699;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>
+    Σχεδιάζω τον δικό μου ιστότοπο
+    <span class="info-icon" onclick="showModal()">ℹ️</span>
+  </h1>
+  <h2>Κάνε κλικ στην πράσινη σημαία για να ξεκινήσεις</h2>
+</div>
+
+<iframe src="sxediasi.html" scrolling="no"></iframe>
+
+<!-- Modal -->
+<div class="modal" id="popupModal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <h3><span class="label">Τίτλος:</span>  Σχεδιάζω τον δικό μου ιστότοπο</h3>
+    <p><span class="label">Συντελεστές:</span> Γεωργιτζίκη Ναταλία Θεόκλεια <br>(Σύλληψη και Δημιουργία)</p>
+    <p><span class="label">Έκδοση:</span> 1.0</p>
+    <p><span class="label">Ημερομηνία κατασκευής:</span> 1/4/2024</p>
+  </div>
+</div>
+
+<script>
+  function showModal() {
+    document.getElementById("popupModal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("popupModal").style.display = "none";
+  }
+
+  // Optional: close modal if user clicks outside content
+  window.onclick = function(event) {
+    const modal = document.getElementById("popupModal");
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
